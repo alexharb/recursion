@@ -19,9 +19,9 @@ describe('getElementsByClassName', function() {
       var result = getElementsByClassName('targetClassName');
       var expectedNodeList = document.getElementsByClassName('targetClassName');
       var expectedArray = Array.prototype.slice.apply(expectedNodeList);
-      var equality = _.isEqual(result, expectedArray); // why can't we use `===` here?
+      var equality = _.isEqual(result, expectedArray); // why can't we use `===` here?  The array values aren't stored in the same location
       expect(equality).to.equal(true);
-
+      
       $rootElement.remove();
     });
     $('body').removeClass('targetClassName');
